@@ -13,12 +13,14 @@
 		"node": ">=6"
 	},
 	"scripts": {
-		"test": "xo && ava && tsd"
+		"test": "xo && ava && tsd",
+		"build": "babel index.js --out-dir lib"
 	},
 	"files": [
 		"index.js",
 		"index.d.ts"
 	],
+	"main": "lib/index.js",
 	"keywords": [
 		"browser",
 		"querystring",
@@ -35,11 +37,13 @@
 		"searchparams"
 	],
 	"dependencies": {
-		"split-on-first": "^1.0.0",
-		"decode-uri-component": "^0.2.0",
-		"strict-uri-encode": "^2.0.0"
+		"@babel/preset-es2015": "7.0.0-beta.53",
+		"decode-uri-component": "^0.2.0"
 	},
 	"devDependencies": {
+		"@babel/cli": "7.7.0",
+		"@babel/core": "7.7.2",
+		"@babel/preset-env": "7.7.1",
 		"ava": "^1.4.1",
 		"deep-equal": "^1.0.1",
 		"fast-check": "^1.5.0",
